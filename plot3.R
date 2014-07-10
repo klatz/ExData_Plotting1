@@ -13,9 +13,10 @@ EPC$Date2 <- strptime(paste(EPC$Date,EPC$Time,sep="/"),"%d/%m/%Y/%H:%M:%S")
 
 ## draw the graph
 plot(EPC$Date2,EPC$Sub_metering_1,type="l",xlab="",ylab="Energy sub metering")
-plot(EPC$Date2,EPC$Sub_metering_2,type="l",col="red")
-plot(EPC$Date2,EPC$Sub_metering_3,type="l",col="blue")
+lines(EPC$Date2,EPC$Sub_metering_2,type="l",col="red")
+lines(EPC$Date2,EPC$Sub_metering_3,type="l",col="blue")
+legend("topright",lwd=1,col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 
 ## save as PNG file
-dev.copy(png,file="plot2.png")
+dev.copy(png,file="plot3.png")
 dev.off()
